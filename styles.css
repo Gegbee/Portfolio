@@ -1,0 +1,455 @@
+/* COLOR PALETTE
+black: #111112
+blue: #5da9f0
+yellow: #ecc828
+purple-pinkish: #cd63f7 maybe
+*/
+html, body {
+    padding:0;
+    margin:0;
+    height:100%;
+    width:100%;
+    overflow-x:hidden;
+}
+p {
+    color:#111112;
+    margin:0;
+    padding:0;
+}
+img {
+   width:100%;
+   object-fit: fill;
+}
+td {
+   text-align:center;
+}
+
+/* USE P FOR EVEYTHING JUST CHANGE FONT, COLOR, AND SIZE IN THESE DIFFERENT CLASSES */
+.xlh {
+   font-family: 'Inter';
+   font-size:60px;
+   text-align: left;
+   margin:0;
+   /* word-spacing: -12px;
+   letter-spacing:-4px; */
+}
+.lh {
+    font-family: 'Inter';
+   font-size: 40px;
+   text-align: left;
+   margin:0;
+}
+.h {
+    font-family: 'Inter';
+   font-size: 38px;
+   text-align: left;
+   margin:0;
+}
+.lt {
+    font-family: 'Inter';
+   font-size: 24px;
+   margin:0;
+}
+.t {
+    font-family: 'Inter', sans-serif;
+    font-weight:300;
+    font-size:19px;
+    margin:0;
+}
+.st { 
+    font-family: 'Inter';
+   font-size:14px;
+   margin:0;
+}
+
+a {
+    font-family: 'Inter';
+    font-size:14px;
+    color:black;
+}
+a:hover {
+    color:black;
+}
+@media screen and (max-width:1200px) {
+   .xlh {
+      font-size: 45px;
+   }
+   .lh {
+      font-size: 32px;
+   }
+   .h {
+      font-size:34px;
+   }
+   .lt {
+      font-size:22px;
+   }
+   .t {
+      font-size:16px;
+   }
+   .st {
+      font-size:12px;
+   }
+}
+
+.image-gallery {
+    overflow-x:clip;
+    overflow-y:scroll;
+    height:90%;
+    display: flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content: space-between;
+    align-items:baseline;
+}
+.image-box {
+    /* background: tomato; */
+    margin: 10px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    flex: 1 0 auto;
+    transition:0.2s;
+    height:13em;
+    width:13em;
+    flex-grow:unset;
+}
+.image {
+    object-fit:cover;
+    border-width: 1px;
+    border-color: rgba(0, 0, 0, 0.589);
+    border-style: outset; 
+    
+}
+.image-box:hover {
+    transform:scale(1.04, 1.04);
+}
+.image-box::before {
+    content:'';
+    float:left;
+    padding-top:100%;
+}
+
+.left-side,.right-side {
+    padding:0;
+    margin:0;
+    height: 100vh;
+    width:100%;
+    position:relative;
+}
+/* 
+@media screen and (min-width:992px) {
+    .left-side, .right-side {
+        height:100vh;
+    }
+} */
+
+/* If you want the content centered horizontally and vertically */
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width:fit-content;
+    transform: translate(-50%, -50%);
+}
+.relative-centered {
+   position:absolute;
+   width:90%;
+   max-height:100%;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+}
+/* LARGE MONITOR */
+@media (min-width: 1700px) {
+    .image-box {
+        /* background: tomato; */
+        margin: 10px;
+        height:18.5em;
+        width:18.5em;
+    }
+}
+/* SMALL MONITOR */
+@media (min-width: 1400px) and (max-width: 1700px) {
+    .image-box {
+        /* background: tomato; */
+        margin: 10px;
+        height:14em;
+        width:14em;
+    }
+}
+/* LARGE LAPTOP */
+@media (min-width: 1200px) and (max-width: 1400px) {
+    .image-box {
+        /* background: tomato; */
+        margin: 5px;
+        height:12em;
+        width:12em;
+    }
+}
+/* SMALL LAPTOP */
+@media (min-width: 1000px) and (max-width: 1199px) {
+    .image-box {
+        /* background: tomato; */
+        margin: 5px;
+        height:15em;
+        width:15em;
+    }
+}
+/* MOBILE */
+@media (max-width: 999px) {
+    .image-box {
+        /* background: tomato; */
+        margin: 5px;
+        height:11em;
+        width:11em;
+    }
+}
+
+.project-card:hover {
+    opacity:1;
+}
+
+.link-icon {
+   text-align: center;
+   width:50px;
+   height:50px;
+   text-decoration: none;
+   transition: transform 0.3s, opacity 1s;
+   display: inline-block;
+   transform: scale(1, 1);
+   opacity:0.7;
+   background-repeat:no-repeat;
+   margin:15px;
+   /* filter: drop-shadow(2px 2px 1px rgba(21, 29, 39, 0.6)); */
+}
+.disabled {
+    opacity:0.2;
+    pointer-events: none;
+}
+.icon {
+   width:50px;
+   height:50px;
+   background-repeat:no-repeat;
+}
+.link-icon:hover {
+    opacity:1;
+    transform: scale(1.15, 1.15);
+}
+
+.blinking-cursor {
+    font-family: 'Roboto Mono', monospace;
+    font-size:65px;
+    color: #111112;
+    display:inline-block;
+    -webkit-animation: 1s blink step-end infinite;
+    -moz-animation: 1s blink step-end infinite;
+    -ms-animation: 1s blink step-end infinite;
+    -o-animation: 1s blink step-end infinite;
+    animation: 1s blink step-end infinite;
+}
+@keyframes blink {
+    from, to {
+        color: transparent;
+    }
+    50% {
+        color: black;
+    }
+}
+@-moz-keyframes blink {
+    from, to {
+        color: transparent;
+    }
+    50% {
+        color: black;
+    }
+}
+@-webkit-keyframes blink {
+    from, to {
+        color: transparent;
+    }
+    50% {
+        color: black;
+    }
+}
+@-ms-keyframes blink {
+    from, to {
+        color: transparent;
+    }
+    50% {
+        color: black;
+    }
+}
+@-o-keyframes blink {
+    from, to {
+        color: transparent;
+    }
+    50% {
+        color: black;
+    }
+}
+
+.menubar {
+    width: 40%;
+    height: 60px;
+    background-color: #f0f0f0;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 0px 0px 20px 20px;
+}
+
+.link-container {
+    width: 80%;
+    display: block;
+    position: relative;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.menubar-link {
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    padding: 0px 15px 0px 15px;
+    transition: 0.3s all;
+}
+
+.menubar-link:hover {
+    cursor: pointer;
+    color: #707070;
+}
+
+.current { color: dodgerblue; }
+.current:hover { color: #6cb7ff; }
+
+.mobile-container {
+    text-align: center;
+}
+
+#mobile-links-show {
+    border: none;
+    outline: none;
+    font-size: 2em;
+}
+
+#mobile-links-show:hover {
+    cursor: pointer;
+    color: #707070;
+}
+
+
+@media screen and (max-width: 990px) {
+    .menubar {
+        width: 100%;
+        border-radius: 0px;
+    }
+
+    .link-container {
+        display: none !important;
+    }
+
+    .mobile-container {
+        display: block !important;
+    }
+
+    .showcase-card-container {
+        transform: translateX(500px);
+    }
+}
+
+#mobile-links {
+    display: block;
+    opacity: 0;
+    text-align: center;
+    margin-top: 10px;
+    margin-left: -32px;
+    transition: opacity 0.5s;
+    background-color: #5da9f0;
+}
+
+.mobile-link {
+    display: block;
+    position: relative;
+    width: 100vw;
+    height: 40px;
+    background-color: #5da9f0;
+    text-decoration: none;
+    color: white;
+    padding-top: 5px;
+    padding-bottom: 15px;
+}
+
+.mobile-link:hover {
+    cursor: pointer;
+    color: lightgray;
+}
+
+.current-mobile { color: black; }
+.current-mobile:hover { color: dimgray; }
+
+#read-more {
+    font-size: 1.25em;
+    animation: bounce 2s ease-in-out infinite;
+    position: absolute;
+    left: 50%;
+    top: 85%;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.6s;
+    opacity: 0;
+}
+
+.read-more-text {
+    color: black;
+    font-weight: 600;
+}
+
+.read-more-arrow { font-size: 1.5em; }
+
+@keyframes bounce {
+    0% { transform: translate(-50%, 0px); }
+    50% { transform: translate(-50%, -15px); }
+    100% { transform: translate(-50%, 0px); }
+}
+
+.text-wrapper{
+   width: 100%;
+   text-align: center;
+   display: flex;
+   flex-flow: row nowrap;
+   justify-content: space-between;
+}
+.slanted-reminder {
+   transform:rotate(15deg);
+}
+.bottom-bar {
+   position: fixed;
+   /* background-image: linear-gradient(to bottom, rgba(255,0,0,0), rgb(232, 233, 235)); */
+   width:100%;
+   text-align: center;
+   padding:2vh;
+   bottom:0;
+   margin:0;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #0000001a;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #0000001a;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #00000028;
+  }
