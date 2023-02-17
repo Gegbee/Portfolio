@@ -109,15 +109,16 @@ a:hover {
     text-align: center;
     flex: 1 0 auto;
     transition:0.2s;
-    height:13em;
-    width:13em;
     flex-grow:unset;
+    object-fit:cover;
 }
 .image {
     object-fit:cover;
     border-width: 1px;
     border-color: rgba(0, 0, 0, 0.589);
     border-style: outset; 
+    height:13em;
+    width:13em;
     
 }
 .image-box:hover {
@@ -161,45 +162,45 @@ a:hover {
 }
 /* LARGE MONITOR */
 @media (min-width: 1700px) {
-    .image-box {
+    .image {
         /* background: tomato; */
-        margin: 10px;
-        height:18.5em;
-        width:18.5em;
+        margin: 8px;
+        height:18em;
+        width:18em;
     }
 }
 /* SMALL MONITOR */
-@media (min-width: 1400px) and (max-width: 1700px) {
-    .image-box {
+@media (min-width: 1450px) and (max-width: 1700px) {
+    .image {
         /* background: tomato; */
-        margin: 10px;
+        margin: 5px;
         height:14em;
         width:14em;
     }
 }
 /* LARGE LAPTOP */
-@media (min-width: 1200px) and (max-width: 1400px) {
-    .image-box {
+@media (min-width: 1200px) and (max-width: 1450px) {
+    .image {
         /* background: tomato; */
-        margin: 5px;
+        margin: 2px;
         height:12em;
         width:12em;
     }
 }
 /* SMALL LAPTOP */
 @media (min-width: 1000px) and (max-width: 1199px) {
-    .image-box {
+    .image {
         /* background: tomato; */
-        margin: 5px;
+        margin: 2px;
         height:15em;
         width:15em;
     }
 }
 /* MOBILE */
 @media (max-width: 999px) {
-    .image-box {
+    .image {
         /* background: tomato; */
-        margin: 5px;
+        margin: 2px;
         height:11em;
         width:11em;
     }

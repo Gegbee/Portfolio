@@ -1,5 +1,5 @@
 lightbox.option({
-    'resizeDuration': 100,
+    'resizeDuration': 0,
     'wrapAround': true,
     'imageFadeDuration':0,
   })
