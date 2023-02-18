@@ -1,0 +1,5 @@
+- Make GalleryBox, a JS, HTML, and CSS library for displaying large images.
+- Have a div that can be set to a certain size and hold images (gallery)
+- Have an image box that can be set to a certain size and hold an image (image)
+- As you click on an image it opens in a lightbox with the caption from the image box, and a 1/3 thingy
+- The caption is above with an X- arrow and two arrow are buttons outside the edges of each image
